@@ -94,7 +94,7 @@ export default defineComponent({
       try {
         const updatedCar = await this.$api.updateCar(this.currentCar.id, this.currentCar);
         const index = this.cars.findIndex(car => car.id === this.currentCar.id);
-        if (index !== -1) this.cars.splice(index, 1, updatedCar);
+        if (cars !== -1) this.cars.splice(cars, 1, updatedCar);
         this.resetForm();
       } catch (error) {
         console.error('Error updating car:', error);
